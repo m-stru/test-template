@@ -3,6 +3,32 @@ body {
     height: 100%;
     margin: 0;
 }
+h1, h2, h3, h4, p{
+    margin: 0;
+}
+.section{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.section-title{
+    height: 28px;
+    margin: 0 auto 24px;
+    text-align: center;
+    color: #555555;
+    font-family: 'Raleway Semibold', 'Arial', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+.section-text{
+    width: 760px;
+    margin: 0 auto 40px;
+    color: #8c8c8c;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 28px;
+    text-align: center;
+}
 @font-face {
     font-family: 'Montserrat';
     font-style: normal;
@@ -177,16 +203,17 @@ body {
     font-weight: 300;
     line-height: 24px;
 }
-.carousel-button{
+.carousel-button, .cta-button, .load-button{
     width: 170px;
-    height: 53px;
+    height: 50px;
     box-shadow: inset 0 -3px 0 #736357;
     border-radius: 3px;
     background-color: #998675;
     color: #ffffff;
     text-transform: uppercase;
-    font-family: "Raleway extrabold", "Arial Black", sans-serif;
+    font-family: 'Raleway Extrabold', 'Arial Black', sans-serif;
     border: none;
+    outline-style: none;
     -o-transition: transform 0.5s ease-in-out;
     -moz-transition: transform 0.5s ease-in-out;
     -webkit-transition: transform 0.5s ease-in-out;
@@ -195,7 +222,7 @@ body {
 .carousel-button:hover{
     transform: scale(1.2);
 }
-.carousel-button:active{
+.carousel-button:active, .cta-button:active, .load-button:active, .filter-button:active{
     opacity: 0.7;
 }
 .carousel-button:focus{
@@ -245,4 +272,197 @@ body {
     transform: scale(1.2);
     border: 2px solid #d3c1ad;
 }
-/* Разметка и стилизация хедера - отправлено на проверку*/
+/*-----------------OFFER------------------*/
+.offer{
+    display: flex;
+    justify-content: center;
+    padding: 80px 0;
+}
+.service{
+    width: 266px;
+    color: #8c8c8c;
+    margin-right: 33px;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+}
+.service:nth-child(4){
+    margin-right: 0;
+}
+.service:after{
+    content: '';
+    display: block;
+    width: 70px;
+    height: 3px;
+    background-color: #f1eee9;
+    margin: 0 auto;
+    align-self: flex-end;
+}
+.service:hover .service-image {
+    fill: #c7b299;
+}
+.service:hover .service-title {
+    color: #c7b299;
+}
+.service:hover:after{
+    background-color: #c7b299;
+}
+.service-link{
+    text-decoration: none;
+}
+.service-image{
+    display: block;
+    margin: 0 auto;
+    fill: #555555;
+}
+.service-title{
+    display: block;
+    margin: 30px auto 20px;
+    text-align: center;
+    color: #555555;
+    font-family: 'Raleway Semibold', 'Arial', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+}
+.service-text{
+    margin: 0 0 30px;
+    color: #8c8c8c;
+    text-align: center;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+}
+/*---------------INTEGRATION-----------------*/
+.integration{
+    padding-left: 345px;
+    padding-right: 345px;
+    background-color: #fbfaf8;
+}
+.integration-photo{
+    max-width: 1230px;
+    min-width: 768px;
+    height: 480px;
+    background-image: url(../img/content/browser-center.jpg), url(../img/content/browser-left.jpg), url(../img/content/browser-right.jpg);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: center top, bottom left, bottom right;
+    background-size: contain, auto, auto;
+}
+/*-----------------PURCHASE------------------*/
+.purchase{
+    display: flex;
+    height: 150px;
+    padding: 50px 375px 50px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    background-color: #f4f5f8;
+    background-image: linear-gradient(to right, #211b19 0%, #4e3427 100%);
+}
+.calltoaction{
+    margin: 0;
+    min-width: 530px;
+    margin-right: 30px;
+    box-sizing: border-box;
+}
+.calltoaction-title, .calltoaction-text{
+    margin: 0;
+}
+.calltoaction-title{
+    font-family: 'Raleway', 'Arial', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #ffffff;
+}
+.product-name{
+    color: #c7b299;
+}
+.calltoaction-text{
+    color: #615855;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 18px;
+}
+.cta-button{
+    align-self: center;
+}
+.cta-button:hover, .load-button:hover{
+    transform: translateY(-15px);
+}
+/*-----------------PROJECTS------------------*/
+.filter{
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+.filter-button{
+    height: 32px;
+    margin-right: 10px;
+    padding: 0 20px;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px;
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    outline-style: none;
+    background-color: #ffffff;
+    color: #998675;
+}
+.filter-button:nth-of-type(5){
+    margin-right: 0;
+}
+.filter-button:hover{
+    background-color: #998675;
+    color: #ffffff;
+}
+.active{
+    background-color: #998675;
+    color: #ffffff;
+}
+.projects-container{
+    max-width: 1170px;
+    margin: 0 auto 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-project{
+    position: relative;
+    margin-bottom: 30px;
+    background-color: #fbfaf8;
+}
+.project-photo{
+    display: block;
+    width: 370px;
+    height: 237px;
+    margin-bottom: 30px;
+}
+.project-photo:after{
+    content: '';
+    position: absolute;
+    top: 212px;
+    left: 20px;
+    border: 15px solid transparent;
+    border-bottom: 10px solid #fbfaf8;
+}
+.project-title, .project-category{
+    padding-left: 30px;
+}
+.project-title{
+    margin-bottom: 14px;
+    color: #c7b299;
+    font-family: 'Raleway', 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+.project-category{
+    margin-bottom: 30px;
+    color: #d1d1d1;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+.load-button{
+    display: block;
+    margin: 0 auto;
+}
