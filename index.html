@@ -9,6 +9,7 @@
 <body>
 <header class="header">
     <section class="navigation">
+        <img class="menu-icon" id="toggle" src="img/graphics/menu.png" height="20" width="20">
         <a class="logo" href="index.html">
             <svg class="logo-image"
                  xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +19,7 @@
             <span class="logo-txt">Waxom</span>
         </a>
         <nav class="nav">
-            <ul class="nav-list">
+            <ul class="nav-list"  id="menu">
                 <li class="nav-list-item"><a class="nav-link" href="#">Home</a></li>
                 <li class="nav-list-item"><a class="nav-link" href="#">About us</a></li>
                 <li class="nav-list-item"><a class="nav-link" href="#">Portfolio</a></li>
@@ -28,34 +29,75 @@
                 <li class="nav-list-item"><a class="nav-link" href="#">Shortcodes</a></li>
                 <li class="nav-list-item"><a class="nav-link" href="#">Contact</a></li>
             </ul>
-            <button class="cart-button">
-                <svg class="cart-button-icon"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18px" height="24px">
-                    <path d="M14.995,2.999 L13.496,2.999 C13.496,1.342 11.483,-0.002 8.999,-0.002 C6.514,-0.002 4.501,1.342 4.501,2.999 L3.002,2.999 C1.346,2.999 0.003,4.341 0.003,5.997 L0.003,20.995 C0.003,22.651 1.346,23.994 3.002,23.994 L14.995,23.994 C16.652,23.994 17.994,22.651 17.994,20.995 L17.994,5.997 C17.994,4.341 16.652,2.999 14.995,2.999 ZM8.999,1.498 C10.655,1.498 11.997,1.962 11.997,2.999 L6.000,2.999 C6.000,1.962 7.343,1.498 8.999,1.498 ZM16.495,20.995 C16.495,21.823 15.824,22.494 14.995,22.494 L3.002,22.494 C2.174,22.494 1.502,21.823 1.502,20.995 L1.502,19.495 L16.495,19.495 L16.495,20.995 ZM16.495,17.995 L1.502,17.995 L1.502,5.997 C1.502,5.169 2.174,4.497 3.002,4.497 L4.501,4.497 L4.501,8.998 L6.000,8.998 L6.000,4.497 L11.997,4.497 L11.997,8.998 L13.496,8.998 L13.496,4.497 L14.995,4.497 C15.824,4.497 16.495,5.169 16.495,5.997 L16.495,17.995 Z"/>
-                </svg>
-            </button>
-            <form class="search-form" id="GET-search-form">
-                <input class="search-field" type="search" id="GET-search-field" name="search" onblur="if (value != '') {value = ''}">
-            </form>
         </nav>
+        <button class="cart-button">
+            <svg class="cart-button-icon"
+                 xmlns="http://www.w3.org/2000/svg"
+                 width="18px" height="24px">
+                <path d="M14.995,2.999 L13.496,2.999 C13.496,1.342 11.483,-0.002 8.999,-0.002 C6.514,-0.002 4.501,1.342 4.501,2.999 L3.002,2.999 C1.346,2.999 0.003,4.341 0.003,5.997 L0.003,20.995 C0.003,22.651 1.346,23.994 3.002,23.994 L14.995,23.994 C16.652,23.994 17.994,22.651 17.994,20.995 L17.994,5.997 C17.994,4.341 16.652,2.999 14.995,2.999 ZM8.999,1.498 C10.655,1.498 11.997,1.962 11.997,2.999 L6.000,2.999 C6.000,1.962 7.343,1.498 8.999,1.498 ZM16.495,20.995 C16.495,21.823 15.824,22.494 14.995,22.494 L3.002,22.494 C2.174,22.494 1.502,21.823 1.502,20.995 L1.502,19.495 L16.495,19.495 L16.495,20.995 ZM16.495,17.995 L1.502,17.995 L1.502,5.997 C1.502,5.169 2.174,4.497 3.002,4.497 L4.501,4.497 L4.501,8.998 L6.000,8.998 L6.000,4.497 L11.997,4.497 L11.997,8.998 L13.496,8.998 L13.496,4.497 L14.995,4.497 C15.824,4.497 16.495,5.169 16.495,5.997 L16.495,17.995 Z"/>
+            </svg>
+        </button>
+        <form class="search-form" id="GET-search-form">
+            <label for="GET-search-field" class="search-field-label">
+                <svg class="search-icon"
+                     xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                     width="24px" height="24px">
+                    <path d="M23.762,22.681 L17.569,16.586 C19.190,14.825 20.187,12.494 20.187,9.929 C20.186,4.443 15.668,-0.002 10.093,-0.002 C4.519,-0.002 0.001,4.443 0.001,9.929 C0.001,15.416 4.519,19.862 10.093,19.862 C12.502,19.862 14.711,19.028 16.446,17.644 L22.663,23.763 C22.966,24.062 23.458,24.062 23.761,23.763 C24.065,23.464 24.065,22.979 23.762,22.681 ZM10.093,18.334 C5.377,18.334 1.553,14.572 1.553,9.929 C1.553,5.288 5.377,1.525 10.093,1.525 C14.810,1.525 18.633,5.288 18.633,9.929 C18.633,14.572 14.810,18.334 10.093,18.334 Z"/>
+                </svg>
+            </label>
+            <input class="search-field" type="search" id="GET-search-field" name="search" onblur="if (value != '') {value = ''}">
+        </form>
     </section>
-    <section class="carousel">
-        <a class="carousel-arrow" href="#"></a>
-        <div class="carousel-content">
-            <span class="carousel-subtitle">Unique and modern design</span>
-            <h1 class="carousel-title">Portfolio PSD Template</h1>
-            <p class="carousel-text">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
-            <button class="carousel-button">get started</button>
+    <section class="slider-container">
+        <a class="slider-arrow" href="#"></a>
+        <div class="slider">
+            <input id="slide-1" name="slider" type="radio" checked>
+            <input id="slide-2" name="slider" type="radio">
+            <input id="slide-3" name="slider" type="radio">
+            <input id="slide-4" name="slider" type="radio">
+            <input id="slide-5" name="slider" type="radio">
+            <div class="slider-wrapper">
+                <div class="slide">
+                    <span class="slider-subtitle">Unique and modern design</span>
+                    <h1 class="slider-title">Portfolio PSD Template</h1>
+                    <p class="slider-text">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Sit lectus in ligula sodales ut vulputate massa auctor sit eget amet vivamus.</p>
+                    <button class="slider-button">get started</button>
+                </div>
+                <div class="slide">
+                    <span class="slider-subtitle">Unique and modern design</span>
+                    <h1 class="slider-title">Portfolio PSD Template</h1>
+                    <p class="slider-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <button class="slider-button">get started</button>
+                </div>
+                <div class="slide">
+                    <span class="slider-subtitle">Unique and modern design</span>
+                    <h1 class="slider-title">Portfolio PSD Template</h1>
+                    <p class="slider-text">Vestibulum feugiat malesuada laoreet. Quisque nec elit lacus. Praesent nec ex ultricies, tempor ipsum vestibulum, porttitor enim. Mauris blandit, dui non venenatis consectetur, lacus sapien accumsan neque, id convallis ligula nisl non mi.</p>
+                    <button class="slider-button">get started</button>
+                </div>
+                <div class="slide">
+                    <span class="slider-subtitle">Unique and modern design</span>
+                    <h1 class="slider-title">Portfolio PSD Template</h1>
+                    <p class="slider-text">In pharetra, metus id tincidunt pellentesque, mauris eros elementum leo, dapibus rhoncus massa nunc at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel dolor ornare, commodo ligula eget, ullamcorper eros.</p>
+                    <button class="slider-button">get started</button>
+                </div>
+                <div class="slide">
+                    <span class="slider-subtitle">Unique and modern design</span>
+                    <h1 class="slider-title">Portfolio PSD Template</h1>
+                    <p class="slider-text">Quisque sit amet leo sed risus congue ullamcorper. Quisque nec hendrerit est. Duis sollicitudin lacus ut nisi pulvinar ullamcorper. Curabitur egestas, nisi at maximus porta, lacus ante pharetra neque, sed tristique nibh urna a nibh.</p>
+                    <button class="slider-button">get started</button>
+                </div>
+            </div>
         </div>
-        <a class="carousel-arrow" href="#"></a>
+        <a class="slider-arrow" href="#"></a>
         <div class="break"></div>
         <div class="pagination">
-            <a class="pagination-item" href="#"></a>
-            <a class="pagination-item" href="#"></a>
-            <a class="pagination-item" href="#"></a>
-            <a class="pagination-item" href="#"></a>
-            <a class="pagination-item" href="#"></a>
+            <label class="pagination-item" for="slide-1"></label>
+            <label class="pagination-item" for="slide-2"></label>
+            <label class="pagination-item" for="slide-3"></label>
+            <label class="pagination-item" for="slide-4"></label>
+            <label class="pagination-item" for="slide-5"></label>
         </div>
     </section>
 </header>
@@ -120,7 +162,7 @@
             <div class="calltoaction-title"><span class="product-name">Waxom </span>Multipurpose WordPress Theme</div>
             <p class="calltoaction-text">Don't Forget to Rate the Template. Thanks so much!</p>
         </div>
-        <button class="cta-button">purchase now</button>
+        <button class="cta-button" id="cta-button">purchase now</button>
     </aside>
     <section class="projects section">
         <h2 class="section-title">Our Latest Projects.</h2>
@@ -176,7 +218,7 @@
                 <p class="project-category">Photography, Holiday</p>
             </article>
         </div>
-        <button class="load-button">load more</button>
+        <button class="load-button" id="load-button">load more</button>
     </section>
     <section class="video-container">
         <button class="video-button" id="play-button" data-state="play" onclick="button">
@@ -252,9 +294,9 @@
                     xmlns:xlink="http://www.w3.org/1999/xlink"
                     width="54px" height="44px">
                     <path d="M52.310,40.611 L1.691,40.611 C0.759,40.611 0.003,41.369 0.003,42.304 C0.003,43.237 0.759,43.995 1.691,43.995 L52.310,43.995 C53.242,43.995 53.998,43.237 53.998,42.304 C53.998,41.369 53.242,40.611 52.310,40.611 ZM28.688,6.771 L28.688,3.387 L32.063,3.387 C32.994,3.387 33.750,2.629 33.750,1.695 C33.750,0.761 32.994,0.003 32.063,0.003 L21.939,0.003 C21.007,0.003 20.251,0.761 20.251,1.695 C20.251,2.629 21.007,3.387 21.939,3.387 L25.314,3.387 C25.314,3.387 25.301,6.910 25.314,6.771 C11.194,7.649 0.003,19.463 0.003,33.843 C0.003,35.217 0.003,34.601 0.003,35.535 C0.003,36.469 0.759,37.227 1.691,37.227 L52.310,37.227 C53.242,37.227 53.998,36.469 53.998,35.535 C53.998,34.601 53.998,35.324 53.998,33.843 C53.998,19.463 42.808,7.649 28.688,6.771 ZM3.378,33.843 C3.378,20.761 13.954,10.155 27.001,10.155 C40.048,10.155 50.623,20.761 50.623,33.843 L3.378,33.843 Z"/>
+            </svg>
             <span class="counter-value">900</span>
             <span class="counter-title">We launched</span>
-            </svg>
         </div>
     </section>
     <section class="blog section">
@@ -372,5 +414,6 @@
     <a class="footer-link" href="#">Only on <span class="origin">Envato Market</span></a>
 </div>
 <script src="scripts/videoscript.js"></script>
+<script src="scripts/menuscript.js"></script>
 </body>
 </html>
